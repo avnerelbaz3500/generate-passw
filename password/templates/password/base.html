@@ -1,0 +1,47 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% static 'favicon.ico' %}
+
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenPass</title>
+    <link rel="stylesheet" href="{% static 'password/styles.css' %}">
+      </head>
+  <body>
+    <header>
+      <nav class = 'bg-light'>
+        <div class = "container">
+          <div class="bg-secondary py-4">
+            <h1>Générateur de mot de passe </h1>
+
+          </div>
+        </div>
+
+      </nav>
+    </header>
+    
+
+    </br></br>
+
+
+    {% block content %}{% endblock %}
+
+
+    
+    
+    <footer>
+   
+    </footer>
+    
+  </body>
+</html>
+    
+
+
+       

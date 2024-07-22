@@ -1,0 +1,42 @@
+{% extends 'password/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% static 'favicon.ico' %}
+
+{% block content%}
+
+<p> Choisissez un nombre </p>
+
+
+
+
+<div class="container mt-5">
+  <div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        
+
+        
+        {{ form.as_p}} 
+        <script src ="{% static 'password/script.js' %}"></script>
+
+        
+        
+       
+
+        
+        
+        <div class="progress my-3" id="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div id = "striped" class="progress-bar progress-bar-striped progress-bar-animated " style="width: 0%"></div>
+        </div>
+        <div id="strength-text" class="mt-2"></div>
+
+        <button type="submit" class="btn btn-success">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
