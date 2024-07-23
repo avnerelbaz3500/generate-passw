@@ -40,13 +40,13 @@ def calculate_password_strength(password):
     if password in knownpass:
         strength = {'percent': 100, 'message': 'Pwned', 'colorClass': 'bg-dark'}
     elif score <= 4 :
-        strength = {'percent': (score / 5) * 100, 'message': 'Weak', 'colorClass': 'bg-danger'}
+        strength = {'percent': (score / 8) * 100, 'message': 'Weak', 'colorClass': 'bg-danger'}
     elif score <= 6:
-        strength = {'percent': (score / 5) * 100, 'message': 'Moderate', 'colorClass': 'bg-warning'}
+        strength = {'percent': (score / 8) * 100, 'message': 'Moderate', 'colorClass': 'bg-warning'}
     elif score <= 7:
-        strength = {'percent': (score / 5) * 100, 'message': 'Strong', 'colorClass': 'bg-info'}
+        strength = {'percent': (score / 8) * 100, 'message': 'Strong', 'colorClass': 'bg-info'}
     else:
-        strength = {'percent': (score / 5) * 100, 'message': 'Very Strong', 'colorClass': 'bg-success'}
+        strength = {'percent': (score / 8) * 100, 'message': 'Very Strong', 'colorClass': 'bg-success'}
 
     return strength
 

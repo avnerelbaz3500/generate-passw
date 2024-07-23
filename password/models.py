@@ -1,8 +1,6 @@
 from django.db import models
 
-from django.core.validators import MaxValueValidator, MinValueValidator
-
-
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 
 
@@ -18,6 +16,8 @@ class Generate(models.Model):
     passphrase = models.fields.CharField(null = True, max_length=1000)
     passphrase_created = models.fields.CharField(null = True, max_length=128)
     dico_scale = models.fields.IntegerField(null =True, default= 4)
+    passmot = models.fields.CharField(null = True, max_length=128)
+    separator = models.fields.CharField(default='/', max_length=3)
 
 
 

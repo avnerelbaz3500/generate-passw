@@ -1,15 +1,10 @@
-/* body {
-    display :flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.form-select.form-select-sm.text-center {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    text-align: center;  /* Centrer le texte */
+    margin: 0 auto;  /* Centrer le champ */
+    display: block;
+    width: fit-content;  /* Ajuster la largeur pour qu'elle corresponde au contenu */
 }
-
-.submit {
-    padding: 3em;
-    margin: 3em;
-
-    display :flex;
-    justify-content: center;
-    align-items: center;
-} */
