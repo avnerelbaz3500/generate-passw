@@ -26,7 +26,7 @@ function checkPasswordStrength() {
         const striped_check = document.getElementById('striped_check');
         const strengthTextCheck = document.getElementById('strength-text-check');
 
-        fetch("/genpass_print/", {
+        fetch("/genpass/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -84,7 +84,7 @@ function classicalPassword() {
         const striped_range = document.getElementById('striped_range');
         const strengthTextRange = document.getElementById('strength-text-range');
 
-        fetch("/genpass_print/", {
+        fetch("/genpass/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -145,7 +145,7 @@ function dicoPassword() {
     timeout = setTimeout(() => {
         console.log('Sending passphrase:', passphrase);
 
-        fetch("/genpass_print/", {
+        fetch("/genpass/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -198,7 +198,7 @@ function passPhrase() {
     // Set a new timeout
     timeout = setTimeout(() => {
 
-        fetch("/genpass_print/", {
+        fetch("/genpass/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

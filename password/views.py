@@ -1,20 +1,21 @@
 from .models import Generate
+from django.utils.translation import gettext_lazy as _
 from .forms import GenerateForm
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .maincode.create import Create
 from .maincode.dico import Dico
 from .maincode.check import calculate_password_strength
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt # type: ignore
 import logging
 
 logger = logging.getLogger(__name__)
 
-@csrf_exempt
-def genpassp(request):
+
+def genpass(request):
+    passw = Generate.objects.get(id=108121)
     if request.method == 'POST':
-        passw = Generate.objects.get(id=108121)
-        form = GenerateForm(request.POST, instance=passw)
+        form = GenerateForm(request.POST)
         
         if form.is_valid():
             scale = form.cleaned_data.get('scale')
@@ -60,24 +61,6 @@ def genpassp(request):
             logger.debug(f"Form errors: {form.errors}")
             return JsonResponse({'error': 'Invalid form data', 'form_errors': form.errors})
     else:
-        logger.debug("Invalid request method")
-        return JsonResponse({'error': 'Invalid request method'})
-
-
-
-def genpass(request):
-    passw = Generate.objects.get(id=108121)
-    if request.method == 'POST':
-        form = GenerateForm(request.POST, instance=passw)
-        if form.is_valid():
-            create = Create(passw.scale,passw.special,passw.simple)
-            passw.mdp = create.genpass()
-            passw.password = ""
-            passw.passphrase = ""
-            form.save()
-            return render(request, 'password/genpass_print.html', {'form':form, 'gen':passw})
-    else:
-        
-        form = GenerateForm(instance=passw)
-    return render(request, 'password/genpass.html', {'form':form, 'gen':passw})
+        form = GenerateForm()
+        return render(request, 'password/genpass.html', {'form':form, 'gen':passw})
 

@@ -62,7 +62,7 @@ class GenerateForm(forms.ModelForm):
                 'min': '2',
                 'max': '6',
                 'oninput': 'dicoPassword()',
-                'value': '4'
+                'value': '4' 
             }),
 
         }

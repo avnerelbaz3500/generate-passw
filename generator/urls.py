@@ -22,8 +22,5 @@ from password import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("genpass/", views.genpass, name = 'genpass' ),
-    path("genpass_print/", views.genpassp, name = 'genpassp' ),
-
-    
-
+    path("genpass_print/", views.genpass, name = 'genpass' ), #erreur par rapport au post sur genpass_print Bizarre
 ]

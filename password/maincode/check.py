@@ -6,14 +6,18 @@ from .create import Create
 
 def calculate_password_strength(password):
     score = 0
-    length = len(password)
+        
+    
 
-    knownpass = Create.knownpassw(2)
+   
 
     # Check length
-    if password == None:
+    if password:
+        length = len(password)
+    else:
         strength = {'percent': 0, 'message': '', 'colorClass': 'bg-dark'}
         return strength
+    knownpass = Create.knownpassw(2)
     if length >= 8:
         score += 1
     if length >= 12:
